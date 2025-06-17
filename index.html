@@ -106,8 +106,10 @@
       min-height: 100vh;
       display: flex;
       align-items: center;
+      justify-content: center;
       position: relative;
       overflow: hidden;
+      padding: 2rem 0;
     }
 
     .hero::before {
@@ -124,6 +126,7 @@
     .hero-content {
       position: relative;
       z-index: 1;
+      text-align: center;
     }
 
     .profile-img {
@@ -133,7 +136,7 @@
       object-fit: cover;
       border: 6px solid rgba(255, 255, 255, 0.2);
       box-shadow: var(--shadow-xl);
-      margin-top: 6rem;
+      margin: 4rem auto;
       transition: transform 0.3s ease;
     }
 
@@ -167,20 +170,22 @@
 
     .social-links {
       margin-bottom: 3rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
     }
 
     .social-links a {
       color: rgba(255, 255, 255, 0.8);
       font-size: 1.5rem;
-      margin: 0 1rem;
-      transition: all 0.3s ease;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
       width: 50px;
       height: 50px;
       border-radius: 50%;
       background: rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
     }
 
     .social-links a:hover {
@@ -199,7 +204,7 @@
       text-decoration: none;
       display: inline-block;
       transition: all 0.3s ease;
-      margin: 0 0.5rem;
+      margin: 0.5rem;
     }
 
     .btn-primary-custom:hover {
@@ -219,7 +224,7 @@
       text-decoration: none;
       display: inline-block;
       transition: all 0.3s ease;
-      margin: 0 0.5rem;
+      margin: 0.5rem;
     }
 
     .btn-outline-custom:hover {
@@ -270,7 +275,7 @@
       background: var(--bg-primary);
       border: 1px solid var(--border-color);
       border-radius: 16px;
-      padding: 2.5rem;
+      padding: 2rem;
       margin-bottom: 2rem;
       box-shadow: var(--shadow-sm);
       transition: all 0.3s ease;
@@ -324,8 +329,9 @@
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-      gap: 0.75rem;
+      gap: 1rem;
       margin-top: 2rem;
+      justify-items: center;
     }
 
     .skill-tag {
@@ -339,6 +345,7 @@
       border: 1px solid var(--border-color);
       transition: all 0.3s ease;
       cursor: default;
+      width: fit-content;
     }
 
     .skill-tag:hover {
@@ -354,13 +361,14 @@
       grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
       gap: 2rem;
       margin-top: 3rem;
+      align-items: start;
     }
 
     .project-card {
       background: var(--bg-primary);
       border: 1px solid var(--border-color);
       border-radius: 20px;
-      padding: 2.5rem;
+      padding: 2rem;
       box-shadow: var(--shadow-sm);
       transition: all 0.3s ease;
       position: relative;
@@ -458,20 +466,22 @@
 
     .footer-social {
       margin-bottom: 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
     }
 
     .footer-social a {
       color: rgba(255, 255, 255, 0.7);
       font-size: 1.5rem;
-      margin: 0 1rem;
-      transition: all 0.3s ease;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
       width: 50px;
       height: 50px;
       border-radius: 50%;
       background: rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
     }
 
     .footer-social a:hover {
@@ -486,8 +496,6 @@
     }
 
     /* Responsive Design */
-   
-
     @media (max-width: 768px) {
       .hero h1 {
         font-size: 2.5rem;
@@ -496,7 +504,6 @@
       .hero .subtitle {
         font-size: 1.2rem;
       }
-
 
       .section-title {
         font-size: 2.2rem;
@@ -535,16 +542,20 @@
       .btn-primary-custom,
       .btn-outline-custom {
         display: block;
-        margin: 0.5rem 0;
+        margin: 0.5rem auto;
         text-align: center;
+        width: fit-content;
       }
 
       .social-links a {
         margin: 0 0.5rem;
       }
+
+      .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      }
     }
 
-    /* Animations */
     @keyframes fadeInUp {
       from {
         opacity: 0;
@@ -590,6 +601,26 @@
     .scroll-top:hover {
       background: var(--accent-hover);
       transform: translateY(-3px);
+    }
+
+    h6 {
+      font-weight: bold;
+      font-style: inherit;
+      margin-top: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .project-card ul {
+      margin-left: 1.5rem;
+      padding-left: 0;
+      list-style-position: outside;
+    }
+
+    .project-card h5 {
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+      font-size: 1.25rem;
+      font-weight: 600;
     }
   </style>
 </head>
@@ -640,8 +671,8 @@
           <p class="subtitle fade-in-up">Full Stack Developer</p>
           <p class="description fade-in-up">
             Crafting innovative web solutions with 6 months of professional experience.
-            Specialized in Python and React.js, passionate about creating scalable,
-            user-centric applications that solve real-world problems.
+            Specialized in Python and React.js,passionate about creating scalable
+            applications that solve real-world problems.
           </p>
           <div class="social-links fade-in-up">
             <a href="https://www.linkedin.com/in/meeraktom/" title="LinkedIn">
@@ -650,11 +681,9 @@
             <a href="https://github.com/mtom94" title="GitHub">
               <i class="fab fa-github"></i>
             </a>
-            <a href="meeraktom@gmail.com" title="Email">
+            <a href="mailto:meeraktom@gmail.com" title="Email">
               <i class="fas fa-envelope"></i>
             </a>
-
-
           </div>
           <div class="fade-in-up">
             <a href="#contact" class="btn-primary-custom">Get In Touch</a>
@@ -683,7 +712,7 @@
           <div class="col-lg-8">
             <div class="card-custom">
               <p class="card-text">
-                I am a dedicated Full Stack Developer with 6 months of professional experience at Marketbytes Webworks,
+                I am a dedicated Full Stack Developer with 6 months of professional experience at MarketBytes WebWorks Pvt Ltd,
                 specializing in Python and React.js. My expertise in both front-end and back-end technologies allows me
                 to craft scalable, user-centric web applications.
               </p>
@@ -723,7 +752,9 @@
             <div class="timeline-marker"></div>
             <div class="card-custom">
               <h3 class="card-title">Full Stack Developer</h3>
-              <p class="card-meta">Marketbytes Webworks • June 2024 - December 2024</p>
+              <p class="card-meta">
+                MarketBytes WebWorks Pvt Ltd • December 2024 - June 2025
+              </p>
               <p class="card-text">
                 Developed and maintained web applications using Python and React.js, ensuring seamless integration of
                 front-end and back-end components. Collaborated with cross-functional teams to design and implement
@@ -751,42 +782,94 @@
           </div>
         </div>
         <div class="projects-grid">
-          <div class="project-card">
+          <div class="project-card ">
             <h3 class="project-title">Almas Movers</h3>
             <div class="tech-stack">React.js • Django REST API</div>
-            <p class="card-text">
-              A comprehensive web application for a moving and logistics company, enabling seamless service booking,
-              shipment tracking, and payment management. Features real-time updates and intuitive user experience.
-            </p>
-          </div>
-          <div class="project-card">
-            <h3 class="project-title">KWA Water Authority</h3>
-            <div class="tech-stack">React.js • Django REST API</div>
-            <p class="card-text">
-              A robust platform for water authority services, offering tools for usage monitoring, bill payments, and
-              maintenance requests. Streamlined government service delivery with modern web technologies.
-            </p>
+            <div class="card-text">
+              <h5>Frontend Development</h5>
+              <ul>
+                <li>Built responsive UI with Tailwind CSS for cross-device compatibility.</li>
+                <li>Created dynamic forms with conditional rendering for better user interaction.</li>
+                <li>Added Google reCAPTCHA v3 for secure form submissions.</li>
+                <li>Developed responsive React components.</li>
+                <li>Implemented form handling with React state management for booking and tracking, integrated with API endpoints.</li>
+                <li>Utilized React Router for navigation and breadcrumb functionality, enhancing seamless page transitions.</li>
+                <li>Integrated Helmet for SEO optimization with dynamic meta tags and canonical URLs.</li>
+                <li>Designed UI components with Tailwind CSS for consistent, responsive layouts.</li>
+                <li>Handled API interactions with custom apiClient for enquiries and tracking, with error handling and feedback.</li>
+                <li>Incorporated reCAPTCHA for form security to prevent spam.</li>
+                <li>Created structured data tables for displaying tracking details and status updates.</li>
+              </ul>
+              <h5>Backend Development (Django)</h5>
+              <ul>
+                <li>Designed Django REST Framework APIs with ModelViewSet for CRUD operations.</li>
+                <li>Implemented custom email-based authentication with OTP reset.</li>
+                <li>Created serializers for secure API interactions.</li>
+                <li>Configured URLs and DefaultRouter for efficient endpoint management.</li>
+                <li>Set up email system for OTP-based password reset.</li>
+              </ul>
+              <h6>API Integration</h6>
+              <ul>
+                <li>Developed RESTful APIs with axios for form submissions and tracking.</li>
+                <li>Implemented error handling and validation for robust feedback and data integrity.</li>
+              </ul>
+              <h6>Database Management</h6>
+              <ul>
+                <li>Designed Django ORM models (AddCustomer, CustomUser) for structured data.</li>
+                <li>Configured MySQL (almasdb) for secure, efficient data management.</li>
+              </ul>
+              <h6>Security & Documentation</h6>
+              <ul>
+                <li>Secured APIs with permission classes for controlled access.</li>
+                <li>Integrated DRF-YASG for Swagger/ReDoc API documentation.</li>
+                <li>Configured CORS and environment variables for secure requests.</li>
+              </ul>
+              <h6>Project Contributions</h6>
+              <ul>
+                <li>Built a full-stack logistics app with booking, tracking, and customer management.</li>
+              </ul>
+            </div>
           </div>
           <div class="project-card">
             <h3 class="project-title">Invoice-Billing System</h3>
             <div class="tech-stack">React.js • Django REST API</div>
-            <p class="card-text">
-              An automated system for businesses, streamlining invoice generation, payment tracking, and financial
-              reporting with a user-friendly interface. Enhanced business efficiency through automation.
-            </p>
-          </div>
-          <div class="project-card">
-            <h3 class="project-title">Green Hills Real Estate</h3>
-            <div class="tech-stack">React.js • Django REST API</div>
-            <p class="card-text">
-              A real estate management platform focused on eco-friendly properties, supporting property listings,
-              bookings, and customer inquiries. Promoting sustainable living through technology.
-            </p>
+            <div class="card-text">
+              <h5>Frontend Development</h5>
+              <ul>
+                <li>Built with React, React Router, React Hook Form, Framer Motion, and Tailwind CSS for a responsive SPA.</li>
+                <li><strong>Auth:</strong> Secure JWT login, password reset with OTP, and profile management with avatar uploads.</li>
+                <li><strong>Dashboard:</strong> Displays metrics (invoices, clients, products) using reusable CountCard components.</li>
+                <li><strong>Client Management:</strong> CRUD operations with dynamic forms, CountriesNow API for address dropdowns, and tax type support.</li>
+                <li><strong>Settings:</strong> Manages invoice series prefixes and logo uploads with real-time previews.</li>
+                <li><strong>API:</strong> Axios with interceptors for token refresh, CRUD operations, and error handling.</li>
+                <li><strong>Responsive:</strong> Collapsible sidebar, topbar, and adaptive UI for desktop/mobile.</li>
+                <li><strong>Components:</strong> Reusable FormField with searchable dropdowns, date pickers, and Lucide React icons.</li>
+                <li><strong>State:</strong> Managed with React Hooks, useLocation, and useNavigate for routing.</li>
+                <li><strong>Security:</strong> Token storage in local/sessionStorage with cleanup on expiration.</li>
+                <li><strong>Modularity:</strong> Scalable codebase with reusable components and centralized layout.</li>
+                <li><strong>Integrations:</strong> CountriesNow API for locations and react-datepicker for dates.</li>
+              </ul>
+              <h5>Backend Development (Django)</h5>
+              <ul>
+                <li>Developed Invoice Management System with Django REST Framework, implementing user authentication, client management, and password reset.</li>
+                <li>Used djangorestframework_simplejwt for JWT-based authentication with custom token generation and refresh.</li>
+                <li>Built user management features: login, logout, profile updates, and password changes using serializers and API views.</li>
+                <li>Created secure password reset with OTP generation, email delivery via Django’s send_mail, and OTP caching.</li>
+                <li>Implemented CRUD operations for client management, supporting tax types, invoice series, and data validation in the Client model.</li>
+                <li>Utilized Django ORM for user and client models with unique constraints and custom save logic for data integrity.</li>
+                <li>Integrated drf-yasg for Swagger/ReDoc API documentation, ensuring clear API specifications.</li>
+                <li>Configured Django settings for email, CORS with django-cors-headers, and environment variables with python-dotenv.</li>
+                <li>Secured API endpoints with IsAuthenticated and AllowAny permission classes for access control.</li>
+                <li>Managed dependencies via requirements.txt, including Pillow, PyJWT, and pytz.</li>
+                <li>Structured modular URL routing with Django’s path for scalable API endpoints.</li>
+                <li>Implemented serializers for robust data validation and transformation for user and client data.</li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- Education Section -->
+     
       <section id="education" class="section">
         <div class="row">
           <div class="col-lg-12">
@@ -810,7 +893,7 @@
           <div class="col-lg-6">
             <div class="card-custom">
               <h3 class="card-title">BSc Computer Science</h3>
-              <p class="card-meta">Naipunnya School of Management • 2019 - 2022</p>
+              <p class="card-meta">Naipunnya School of Management • 2017 - 2020</p>
               <p class="card-text">
                 Comprehensive foundation in computer science fundamentals, programming languages,
                 and software development principles. Strong mathematical and analytical background.
@@ -836,9 +919,10 @@
             <div class="skill-tag">Django REST API</div>
             <div class="skill-tag">JavaScript</div>
             <div class="skill-tag">React.js</div>
+            <div class="skill-tag">Tailwind CSS</div>
+            <div class="skill-tag">Bootstrap</div>
             <div class="skill-tag">HTML5</div>
             <div class="skill-tag">CSS3</div>
-            <div class="skill-tag">Bootstrap</div>
             <div class="skill-tag">SQL</div>
             <div class="skill-tag">MySQL</div>
             <div class="skill-tag">MongoDB</div>
@@ -854,9 +938,9 @@
       <!-- Contact Section -->
       <section id="contact" class="section">
         <div class="row">
-          <div class="col-lg-12 text-center">
+          <div class="col-lg-12 ">
             <h2 class="section-title">Let's Work Together</h2>
-            <p class="section-subtitle">
+            <p class="section-subtitle ">
               Ready to bring your ideas to life? Let's discuss how we can create something amazing together.
             </p>
           </div>
@@ -869,7 +953,7 @@
                 I'm always interested in discussing new opportunities, collaborating on exciting projects,
                 or simply connecting with fellow developers and innovators.
               </p>
-              <div class="row text-center">
+              <div class="row justify-content-center">
                 <div class="col-md-4 mb-3">
                   <div class="contact-item">
                     <i class="fas fa-envelope fa-2x text-primary mb-3"></i>
@@ -902,24 +986,8 @@
     </div>
   </main>
 
-  <!-- Footer -->
-  <!-- <footer class="footer">
-    <div class="container">
-      <div class="footer-social">
-        <a href="https://linkedin.com/in/yourprofile" title="LinkedIn">
-          <i class="fab fa-linkedin"></i>
-        </a>
-        <a href="https://github.com/yourprofile" title="GitHub">
-          <i class="fab fa-github"></i>
-        </a>
-        <a href="mailto:meeraktom@gmail.com" title="Email">
-          <i class="fas fa-envelope"></i>
-        </a>
-      </div>
-      
-    </div>
-  </footer>
- -->
+  
+
   <!-- Scroll to top button -->
   <button class="scroll-top" id="scrollTop">
     <i class="fas fa-arrow-up"></i>
@@ -1025,26 +1093,6 @@
       observer.observe(el);
     });
 
-    // Typing effect for hero title (optional enhancement)
-    function typeWriter(element, text, speed = 100) {
-      let i = 0;
-      element.innerHTML = '';
-      function type() {
-        if (i < text.length) {
-          element.innerHTML += text.charAt(i);
-          i++;
-          setTimeout(type, speed);
-        }
-      }
-      type();
-    }
-
-    // Contact form validation (if you add a form later)
-    function validateEmail(email) {
-      const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      return re.test(email);
-    }
-
     // Skill tag interaction enhancement
     document.querySelectorAll('.skill-tag').forEach(tag => {
       tag.addEventListener('click', function () {
@@ -1055,17 +1103,14 @@
       });
     });
 
-    // Project card click handler (for future enhancements)
+    // Project card click handler
     document.querySelectorAll('.project-card').forEach(card => {
       card.addEventListener('click', function () {
-        // Future: Open project details modal or navigate to project page
         console.log('Project clicked:', this.querySelector('.project-title').textContent);
       });
     });
 
-    // Console message for developers
-    console.log('%c👋 Hello Developer!', 'color: #3b82f6; font-size: 16px; font-weight: bold;');
-    console.log('%cThanks for checking out the code! Feel free to reach out if you have any questions.', 'color: #64748b; font-size: 14px;');
+   
   </script>
 </body>
 
